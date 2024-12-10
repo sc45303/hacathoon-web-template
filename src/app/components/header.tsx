@@ -1,14 +1,14 @@
-"use client"  
+"use client";
 
-import Link from "next/link"
-import { Search, ShoppingCart, User, ChevronDown, X } from 'lucide-react'
-import { useState } from "react"
+import Link from "next/link";
+import { Search, ShoppingCart, User, ChevronDown, X } from 'lucide-react';
+import { useState } from "react";
 
 export function Header() {
-  const [showBanner, setShowBanner] = useState(true)
+  const [showBanner, setShowBanner] = useState(true);
 
   return (
-    <header className="w-full">
+    <header className="w-full font-IntegralCF">
       {/* Top Banner */}
       {showBanner && (
         <div className="bg-black text-white py-2 px-4 relative">
@@ -33,33 +33,33 @@ export function Header() {
       {/* Main Navigation */}
       <nav className="border-b border-gray-200 py-4">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center ">
             {/* Logo */}
-            <Link href="/" className="font-bold text-3xl mr-6 md:mr-0">
+            <Link href="/" className=" font-black text-3xl md:text-4xl px-4 py-2 flex">
               SHOP.CO
             </Link>
 
             {/* Navigation Links */}
-            <div className="hidden lg:flex items-center space-x-8">
+            <div className="hidden lg:flex items-center space-x-8 mr-4"> 
               <div className="relative group">
                 <Link href="/shop" className="flex items-center hover:text-gray-600">
                   Shop
                   <ChevronDown className="h-4 w-4 ml-1" />
                 </Link>
               </div>
-              <Link href="/on-sale" className="hover:text-gray-600">
+              <Link href="/pages/onSale" className="hover:text-gray-600">
                 On Sale
               </Link>
-              <Link href="/new-arrivals" className="hover:text-gray-600">
+              <Link href="/pages/NEW-ARRIVALS" className="hover:text-gray-600">
                 New Arrivals
               </Link>
-              <Link href="/brands" className="hover:text-gray-600">
+              <Link href="/pages/brands" className="hover:text-gray-600">
                 Brands
               </Link>
             </div>
 
             {/* Search Bar */}
-            <div className="flex-1 max-w-3xl mx-8">
+            <div className="flex-1 max-w-3xl mr-4">
               <div className="relative w-full">
                 <input
                   type="search"
@@ -83,6 +83,5 @@ export function Header() {
         </div>
       </nav>
     </header>
-  )
+  );
 }
-

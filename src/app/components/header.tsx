@@ -70,7 +70,7 @@ export function Header() {
             </div>
 
             {/* Search Bar */}
-            <div className="flex-1 max-w-3xl mr-4 hidden lg:block">
+            <div className="flex-1 max-w-3xl mr-4  lg:block">
               <div className="relative w-full">
                 <input
                   type="search"

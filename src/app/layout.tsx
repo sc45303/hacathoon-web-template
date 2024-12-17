@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 import {Pacifico} from "next/font/google";
 
 import "./globals.css";
+import { Header } from "./components/header";
+import { Footer } from "./components/footer";
+
 const hero = Pacifico({subsets: ["latin"], 
   weight: "400",
   variable: "--font-pacifico",
@@ -33,8 +36,9 @@ export default function RootLayout({
     <html lang="en">
       <body
        className={hero.variable}
-      >
+      ><Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

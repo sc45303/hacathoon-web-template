@@ -3,6 +3,7 @@ import React from 'react'
 import Image from "next/image"
 import { Star, StarHalf } from 'lucide-react'
 
+
 const Arrivals = [
   {
     name: "T-shirt with Tape Details",
@@ -72,6 +73,7 @@ const Arrivals = [
 ]
 
 function Rating({ rating }: { rating: number }) {
+
   return (
     <div className="flex items-center gap-1">
       {[1, 2, 3, 4, 5].map((value) => {

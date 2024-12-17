@@ -6,24 +6,25 @@ import { TopSelling } from './components/topSelling'
 import DressStyle from './components/dressStyle'
 import { Reviews } from './components/review'
 import { Newsletter } from './components/newslater'
-import { Footer } from './components/footer'
-import { Header } from './components/header'
+import BrandLogos from './components/BrandLogos'
+
+
 // import ProductCard from './components/productCard'
 
 const page = () => {
   return (
     <div>
-      <Header />
+     
       <Hero />
-      {/* <ProductCard  /> */}
-      
+      {/* <ProductCard /> */}
+      <BrandLogos/>
       <NewArrivals />
       <TopSelling />
       <DressStyle />.
       <Reviews />
       <Newsletter />
-      <Footer />
-      z
+     
+  
     </div>
   )
 }

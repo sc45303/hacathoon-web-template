@@ -44,16 +44,16 @@ export function Header() {
             >
               <Menu className="h-6 w-6" />
             </button>
-            <Link href="/" className="font-black text-3xl md:text-4xl px-4 py-2 flex">
+            <Link href="/" className=" font-integral font-black text-3xl md:text-4xl px-4 py-2 flex">
               SHOP.CO
             </Link>
 
            
 
             {/* Navigation Links */}
-            <div className={`lg:flex items-center space-x-8 mr-4 ${menuOpen ? 'flex' : 'hidden'} lg:block`}>
-              <div className="relative group">
-                <Link href="/shop" className="flex items-center hover:text-gray-600">
+            <div className={`lg:flex items-center space-x-8 mr-4 ${menuOpen ? 'flex' : 'hidden'} lg:block`}>    
+              <div className="relative group font-integral">
+                <Link href="/shop" className="flex items-center hover:text-gray-600 ">
                   Shop
                   <ChevronDown className="h-4 w-4 ml-1" />
                 </Link>

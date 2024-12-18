@@ -1,7 +1,8 @@
 "use client"
+import { MdCheckCircle } from "react-icons/md";
 
 import { useState, useEffect } from 'react'
-import { Star, ChevronLeft, ChevronRight, CheckCircle } from 'lucide-react'
+import { Star, ChevronLeft, ChevronRight,  } from 'lucide-react'
 
 const reviews = [
   {
@@ -57,9 +58,9 @@ export function Reviews() {
   }
 
   return (
-    <section className="py-16 overflow-hidden bg-gray-50">
+    <section className="py-16 overflow-hidden bg-gray-50 font-satoshi  ">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-start mb-12">
+        <h2 className="text-4xl font-bold text-start mb-12 font-Bold">
           OUR HAPPY CUSTOMERS
         </h2>
         
@@ -67,7 +68,7 @@ export function Reviews() {
           {/* Navigation Buttons */}
           <button 
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-100 transition-colors"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-100 transition-colors "
             aria-label="Previous review"
           >
             <ChevronLeft className="w-6 h-6" />
@@ -82,7 +83,7 @@ export function Reviews() {
 
           {/* Reviews Container */}
           <div 
-            className="flex transition-transform duration-300 ease-in-out"
+            className="flex "
             style={{ transform: `translateX(-${currentIndex * (100 / visibleReviews)}%)` }}
           >
             {reviews.map((review, index) => (
@@ -90,7 +91,7 @@ export function Reviews() {
                 key={index}
                 className="flex-none w-full md:w-1/2 lg:w-1/3 px-3"
               >
-                <div className="bg-white p-8 rounded-lg shadow-md h-full">
+                <div className="bg-white p-8 rounded-3xl shadow-md h-full transform hover:scale-110 duration-300 ease-in-out ">
                   <div className="flex gap-1 mb-4">
                     {[...Array(5)].map((_, i) => (
                       <Star
@@ -102,7 +103,8 @@ export function Reviews() {
                   
                   <div className="flex items-center gap-2 mb-4">
                     <span className="font-semibold">{review.name}</span>
-                    <CheckCircle className="w-4 h-4 text-green-500 fill-green-500" />
+                    <MdCheckCircle 
+                    className="w-6 h-10 text-green-500 fill-green-500" />
                   </div>
                   
                   <p className="text-gray-600 leading-relaxed">

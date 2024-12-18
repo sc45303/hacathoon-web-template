@@ -24,7 +24,7 @@ const Hero = () => {
           <div>
             <a
               href="/shop"
-              className="w-full md:w-52 mb-5 md:mb-12 inline-block text-center bg-black hover:bg-black/80 transition-all text-white px-14 py-4 rounded-full"
+              className="w-full md:w-52 mb-5 md:mb-12 inline-block text-center bg-black hover:bg-black/80 transition-all text-white px-14 py-4 rounded-full  hover:bg-black hover:text-white hover:transition-transform  transform hover:scale-110 duration-300 ease-in-out"
             >
               Shop Now
             </a>

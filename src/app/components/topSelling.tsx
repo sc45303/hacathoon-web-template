@@ -38,7 +38,7 @@ const Arrivals = [
 
 function Rating({ rating }: { rating: number }) {
   return (
-    <div className="flex items-center gap-1">
+    <div className="flex items-center gap-1 font- ">
       {[1, 2, 3, 4, 5].map((value) => {
         if (value <= Math.floor(rating)) {
           return <Star key={value} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
@@ -55,39 +55,39 @@ function Rating({ rating }: { rating: number }) {
 
 export function TopSelling() {
   return (
-    <section className="py-8 md:py-16">
-      <div className="container mx-auto px-4">
-        <h2 className="text-2xl md:text-4xl font-bold text-center mb-6 md:mb-12">Top Selling</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+    <section className="py-8 md:py-16 font-Bold">
+      <div className="container mx-auto px-4 font- ">
+        <h2 className="text-2xl md:text-4xl font-bold text-center mb-6 md:mb-12  ">Top Selling</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 font-satoshi ">
           {Arrivals.map((product) => (
-            <div key={product.name} className="group">
-              <div className="relative aspect-square mb-4   overflow-hidden">
+            <div key={product.name} className="group ">
+              <div className="relative aspect-square mb-4  rounded-4xl overflow-hidden  transform hover:scale-110 duration-300 ease-in-out " >
                 <Image
                   src={product.image}
                   alt={product.name}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  className="object-contain p-4 "
+                  className="object-contain p-4  "
                 />
                 {product.discount && (
-                  <div className="absolute top-4 right-4 bg-red-500 text-white text-xs px-2 py-1 rounded">
+                  <div className="absolute top-4 right-4 bg-red-500 text-white text-xs px-2 py-1 rounded font- ">
                     -{product.discount}%
                   </div>
                 )}
               </div>
-              <h3 className="font-medium mb-2 text-sm md:text-base">{product.name}</h3>
+              <h3 className="font-bold mb-2 text-sm md:text-base font-satoshi ">{product.name}</h3>
               <Rating rating={product.rating} />
-              <div className="flex items-center gap-3 mt-2">
-                <span className="font-medium">${product.price}</span>
+              <div className="flex items-center gap-3 mt-2 font- ">
+                <span className="font-bold font-satoshi">${product.price}</span>
                 {product.originalPrice && (
-                  <span className="text-gray-400 line-through">${product.originalPrice}</span>
+                  <span className="text-gray-400 line-through font- ">${product.originalPrice}</span>
                 )}
               </div>
             </div>
           ))}
         </div>
-        <div className="flex justify-center mt-8 md:mt-12">
-          <button className="text-base w-full sm:w-[228px] h-[52px] border border-gray-200 px-4 py-2 rounded-full hover:bg-gray-50 transition-colors">
+        <div className="flex justify-center mt-8 md:mt-12 font-satoshi ">
+          <button className="text-base w-full sm:w-[228px] h-[52px] border border-gray-200 px-4 py-2 rounded-full   hover:bg-black hover:text-white hover:transition-transform ease-in-out transform hover:scale-110 duration-300">
             View All
           </button>
         </div>

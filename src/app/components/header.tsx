@@ -1,15 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { Search, ShoppingCart, User, ChevronDown, X, Menu } from 'lucide-react';
+import { ShoppingCart, User, ChevronDown, X, Menu } from "lucide-react";
 import { useState } from "react";
+import SearchBar from "./searchbar";
 
 export function Header() {
   const [showBanner, setShowBanner] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="w-full font-IntegralCF">
+    <header className="w-full font-satoshi">
       {/* Top Banner */}
       {showBanner && (
         <div className="bg-black text-white py-2 px-4 relative">
@@ -32,32 +33,34 @@ export function Header() {
       )}
 
       {/* Main Navigation */}
-      <nav className="border-b border-gray-200 py-4">
+      <nav className="border-b border-gray-200 py-4 ">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between space-x-2 ">
             {/* Logo */}
-             {/* Mobile Hamburger Menu */}
-             <button
+            <button
               className="lg:hidden flex items-center justify-center p-2"
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"
             >
               <Menu className="h-6 w-6" />
             </button>
-            <Link href="/" className=" font-integral font-black text-3xl md:text-4xl px-4 py-2 flex">
+            <Link
+              href="/"
+              className="font-satoshi font-black text-3xl md:text-4xl px-4 py-2 flex"
+            >
               SHOP.CO
             </Link>
 
-           
-
             {/* Navigation Links */}
-            <div className={`lg:flex items-center space-x-8 mr-4 ${menuOpen ? 'flex' : 'hidden'} lg:block`}>    
-              <div className="relative group font-integral">
-                <Link href="/shop" className="flex items-center hover:text-gray-600 ">
-                  Shop
-                  <ChevronDown className="h-4 w-4 ml-1" />
-                </Link>
-              </div>
+            <div
+              className={`hidden lg:flex items-center space-x-8 ${
+                menuOpen ? "hidden" : "flex"
+              }`}
+            >
+              <Link href="/shop" className="hover:text-gray-600 flex items-center">
+                Shop
+                <ChevronDown className="h-4 w-4 ml-1" />
+              </Link>
               <Link href="/pages/onSale" className="hover:text-gray-600">
                 On Sale
               </Link>
@@ -70,16 +73,7 @@ export function Header() {
             </div>
 
             {/* Search Bar */}
-            <div className="flex-1 max-w-3xl mr-4  lg:block">
-              <div className="relative w-full">
-                <input
-                  type="search"
-                  placeholder="Search for products..."
-                  className="w-full px-4 py-2 pl-10 bg-gray-100 rounded-full focus:outline-none focus:ring-1 focus:ring-black"
-                />
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-              </div>
-            </div>
+            <SearchBar />
 
             {/* Icons */}
             <div className="flex items-center space-x-4">

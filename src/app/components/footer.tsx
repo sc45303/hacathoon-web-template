@@ -32,34 +32,21 @@ const resourceLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-white pt-16 pb-8">
+    <footer className="bg-white pt-16 pb-8 font-satoshi">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-16">
           {/* Company Info */}
           <div className="lg:col-span-1 ">
-            <h2 className="text-2xl font-bold mb-6">SHOP.CO</h2>
+            <h2 className="text-2xl font-bold mb-6 font-Bold">SHOP.CO</h2>
             <p className="text-gray-600 mb-6  sm:row-span-2">
               We have clothes that suits your style and which you&apos;re proud to wear. From women to men.
             </p>
-            <div className="flex space-x-4">
-              <Link href="#" className="text-gray-600 hover:text-black">
-                <Twitter className="w-5 h-5" />
-              </Link>
-              <Link href="#" className="text-gray-600 hover:text-black">
-                <Facebook className="w-5 h-5" />
-              </Link>
-              <Link href="#" className="text-gray-600 hover:text-black">
-                <Instagram className="w-5 h-5" />
-              </Link>
-              <Link href="#" className="text-gray-600 hover:text-black">
-                <Github className="w-5 h-5" />
-              </Link>
-            </div>
+            
           </div>
 
           {/* Company Links */}
           <div>
-            <h3 className="font-bold mb-6">COMPANY</h3>
+            <h3 className="font-bold mb-6 font-Bold">COMPANY</h3>
             <ul className="space-y-4">
               {companyLinks.map((link) => (
                 <li key={link.name}>
@@ -73,7 +60,7 @@ export function Footer() {
 
           {/* Help Links */}
           <div>
-            <h3 className="font-bold mb-6">HELP</h3>
+            <h3 className="font-bold mb-6 font-Bold">HELP</h3>
             <ul className="space-y-4">
               {helpLinks.map((link) => (
                 <li key={link.name}>
@@ -87,7 +74,7 @@ export function Footer() {
 
           {/* FAQ Links */}
           <div>
-            <h3 className="font-bold mb-6">FAQ</h3>
+            <h3 className="font-bold mb-6 font-Bold">FAQ</h3>
             <ul className="space-y-4">
               {faqLinks.map((link) => (
                 <li key={link.name}>
@@ -101,7 +88,7 @@ export function Footer() {
 
           {/* Resources Links */}
           <div>
-            <h3 className="font-bold mb-6">RESOURCES</h3>
+            <h3 className="font-bold mb-6 font-Bold">RESOURCES</h3>
             <ul className="space-y-4">
               {resourceLinks.map((link) => (
                 <li key={link.name}>
@@ -112,6 +99,20 @@ export function Footer() {
               ))}
             </ul>
           </div>
+          <div className="flex space-x-4">
+              <Link href="#" className="text-gray-600 hover:text-black  transform hover:scale-150 duration-300 ease-in-out">
+                <Twitter className="w-5 h-5" />
+              </Link>
+              <Link href="#" className="text-gray-600 hover:text-black  transform hover:scale-150 duration-300 ease-in-out">
+                <Facebook className="w-5 h-5" />
+              </Link>
+              <Link href="#" className="text-gray-600 hover:text-black transform hover:scale-150 duration-300 ease-in-out">
+                <Instagram className="w-5 h-5" />
+              </Link>
+              <Link href="#" className="text-gray-600 hover:text-black  transform hover:scale-150 duration-300 ease-in-out">
+                <Github className="w-5 h-5" />
+              </Link>
+            </div>
         </div>
 
         {/* Bottom Footer */}
@@ -126,38 +127,41 @@ export function Footer() {
                 alt="Visa"
                 width={40}
                 height={25}
-                className="h-[30px] w-[46px]"
+                className="h-[30px] w-[46px] transform hover:scale-150 duration-300 ease-in-out "
               />
               <Image
                 src="/cards/visa red.png"
                 alt="Mastercard"
                 width={40}
                 height={25}
-                className="h-[30px] w-[46px]"
+                className="h-[30px] w-[46px]  transform hover:scale-150 duration-300 ease-in-out"
               />
               <Image
                 src="/cards/paypal.png"
                 alt="PayPal"
                 width={46}
                 height={30}
-                className="h-[30px] w-[46px]"
+                className="h-[30px] w-[46px]  transform hover:scale-150 duration-300 ease-in-out"
               />
               <Image
                 src="/cards/pay.png"
                 alt="Apple Pay"
                 width={40}
                 height={25}
-                className="h-[30px] w-[46px]"
+                className="h-[30px] w-[46px]  transform hover:scale-150 duration-300 ease-in-out"
               />
               <Image
                 src="/cards/g pay.png"
                 alt="Google Pay"
                 width={40}
                 height={25}
-                className="h-[30px] w-[46px]"
+                className="h-[30px] w-[46px]  transform hover:scale-150 duration-300 ease-in-out"
               />
+
             </div>
+            
           </div>
+          
         </div>
       </div>
     </footer>

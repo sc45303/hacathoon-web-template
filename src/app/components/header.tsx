@@ -46,7 +46,7 @@ export function Header() {
             </button>
             <Link
               href="/"
-              className="font-satoshi font-black text-3xl md:text-4xl px-4 py-2 flex"
+              className="font-Bold font-black text-3xl md:text-4xl px-4 py-2 flex"
             >
               SHOP.CO
             </Link>

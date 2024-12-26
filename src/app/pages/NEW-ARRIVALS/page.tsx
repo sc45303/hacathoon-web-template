@@ -1,11 +1,15 @@
+
+"use client";
 import React from 'react'
 
 import Image from "next/image"
-import { Star, StarHalf } from 'lucide-react'
+import  Link from 'next/link'
+import { useRouter } from 'next/navigation';
 
-
-const Arrivals = [
+import { Star, StarHalf } from 'lucide-react';
+const PageArrivals = [
   {
+    id: "t-shirt-tape-details",
     name: "T-shirt with Tape Details",
     image: "/images/pic1.png",
     rating: 4.5,
@@ -14,46 +18,16 @@ const Arrivals = [
     discount: null
   },
   {
+    id: "skinny-fit-jeans",
     name: "Skinny Fit Jeans",
-    image: "/images/pic10.png",
+    image: "/images/pic2.png",
     rating: 3.5,
     price: 240,
     originalPrice: 260,
     // discount: 20
   },
   {
-    name: "Checkered Shirt",
-    image: "/images/pic11.png",
-    rating: 4.5,
-    price: 180,
-    originalPrice: null,
-    discount: null
-  },
-  {
-    name: "Sleeve Striped T-shirt",
-    image: "/images/pic12.png",
-    rating: 4.5,
-    price: 130,
-    originalPrice: 160,
-    // discount: 30
-  },
-  {
-    name: "T-shirt with Tape Details",
-    image: "/images/pic13.png",
-    rating: 4.5,
-    price: 120,
-    originalPrice: null,
-    discount: null
-  },
-  {
-    name: "Skinny Fit Jeans",
-    image: "/images/pic14.png",
-    rating: 3.5,
-    price: 240,
-    originalPrice: 260,
-    // discount: 20
-  },
-  {
+    id: "checkered-shirt",
     name: "Checkered Shirt",
     image: "/images/pic3.png",
     rating: 4.5,
@@ -62,12 +36,49 @@ const Arrivals = [
     discount: null
   },
   {
+    id: "sleeve-striped-tshirt",
+    name: "Sleeve Striped T-shirt",
+    image: "/images/pic4.png",
+    rating: 4.5,
+    price: 130,
+    originalPrice: 160,
+     discount: 30
+  },
+  {
+    id: "t-shirt-tape-details",
+    name: "T-shirt with Tape Details",
+    image: "/images/pic1.png",
+    rating: 4.5,
+    price: 120,
+    originalPrice: null,
+    discount: null
+  },
+  {
+    id: "skinny-fit-jeans",
     name: "Skinny Fit Jeans",
     image: "/images/pic2.png",
     rating: 3.5,
     price: 240,
     originalPrice: 260,
-    // discount: 20
+     discount: 20
+  },
+  {
+    id: "checkered-shirt",
+    name: "Checkered Shirt",
+    image: "/images/pic.png",
+    rating: 4.5,
+    price: 180,
+    originalPrice: null,
+    discount: null
+  },
+  {
+    id: "sleeve-striped-tshirt",
+    name: "Skinny Fit Jeans",
+    image: "/images/pic5.png",
+    rating: 3.5,
+    price: 240,
+    originalPrice: 260,
+     discount: 20
   },
  
 ]
@@ -90,30 +101,51 @@ function Rating({ rating }: { rating: number }) {
   )
 }
 
+  
 
 const PageArrival = () => {
+ 
+  const router = useRouter();
+  const handleProductClick = (id: string) => {
+    router.push(`/product/${id}`); // Navigate to dynamic product page
+  };
+
+
   return (
-    <section className="py-8 md:py-16">
+    <section className="py-8 md:py-16 font-satoshi">
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl md:text-4xl font-bold text-center mb-6 md:mb-12">NEW ARRIVALS</h2>
+        <h2 className="text-2xl md:text-4xl font-Bold text-center mb-6 md:mb-12 ">NEW ARRIVALS</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
-          {Arrivals.map((product) => (
-            <div key={product.name} className="group">
-              <div className="relative aspect-square mb-4  rounded-lg overflow-hidden">
+          {PageArrivals.map((product) => (
+            <div key={product.name} className="group cursor-move"
+            onClick={() => handleProductClick(product.id)}
+            >
+           
+              
+              <div className="relative aspect-square mb-4  rounded-lg overflow-hidden font-satoshi">
+
+              <Link href="#product1" className="absolute top-0 left-0 w-full h-full z-10">
                 <Image
+                 
                   src={product.image}
                   alt={product.name}
+                  
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   className="object-contain p-4"
+
                 />
+                </Link>
+                
+                
                 {product.discount && (
-                  <div className="absolute top-4 right-4 bg-red-500 text-white text-xs px-2 py-1 rounded">
+                  <div className="absolute top-4 right-4 bg-red-500 text-white text-xs px-2 py-1 rounded font-satoshi">
                     {/* -{product.discount}% */}
                   </div>
+                  
                 )}
               </div>
-              <h3 className="font-medium mb-2 text-sm md:text-base">{product.name}</h3>
+              <h3 className="font-satoshi mb-2 text-sm md:text-base ">{product.name}</h3>
               <Rating rating={product.rating} />
               <div className="flex items-center gap-3 mt-2">
                 <span className="font-medium">${product.price}</span>

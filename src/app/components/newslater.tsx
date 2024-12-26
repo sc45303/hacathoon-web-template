@@ -14,11 +14,11 @@ export function Newsletter() {
                 <input
                   type="email"
                   placeholder="Enter your email address"
-                  className="text-gray-900 px-4 py-2 rounded-md w-full pl-10 font-satoshi"
+                  className="text-gray-900 px-4 py-2 rounded-3xl w-full pl-10 font-satoshi"
                 />
                 <MdOutlineEmail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600 text-2xl" />
               </div>
-              <button className="bg-white text-black hover:bg-gray-100 h-12 px-6 rounded-md w-full md:w-auto font-satoshi">
+              <button className="bg-white text-black hover:bg-gray-100 h-12 px-6 rounded-3xl w-full md:w-auto font-satoshi">
                 Subscribe to Newsletter
               </button>
             </div>

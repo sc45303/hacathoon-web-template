@@ -7,7 +7,7 @@ export function ProductDetail() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      {/* Breadcrumb */}
+      {/* Breadcrumb
       <nav className="flex items-center gap-2 text-sm mb-8 text-gray-500">
         <span>Home</span>
         <span>/</span>
@@ -16,14 +16,14 @@ export function ProductDetail() {
         <span>Men</span>
         <span>/</span>
         <span className="text-black">T-shirts</span>
-      </nav>
+      </nav> */}
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         {/* Product Images */}
         <div className="space-y-4">
           <div className="aspect-square relative bg-gray-100 rounded-lg">
             <Image
-              src="/placeholder.svg?height=600&width=600"
+              src="/images/pic1.png"
               alt="ONE LIFE GRAPHIC T-SHIRT"
               fill
               className="object-contain p-8"
@@ -36,7 +36,7 @@ export function ProductDetail() {
                 className="aspect-square relative bg-gray-100 rounded-lg cursor-pointer"
               >
                 <Image
-                  src="/placeholder.svg?height=150&width=150"
+                  src=""
                   alt={`Product view ${i}`}
                   fill
                   className="object-contain p-4"

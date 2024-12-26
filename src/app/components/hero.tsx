@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 
@@ -22,12 +23,13 @@ const Hero = () => {
             style.
           </p>
           <div>
-            <a
+            <Link
               href="/shop"
               className="w-full md:w-52 mb-5 md:mb-12 inline-block text-center bg-black hover:bg-black/80 transition-all text-white px-14 py-4 rounded-full  hover:bg-black hover:text-white hover:transition-transform  transform hover:scale-110 duration-300 ease-in-out"
             >
+              
               Shop Now
-            </a>
+            </Link>
           </div>
           <div className=" font-satoshin  flex md:h-full md:max-h-11 lg:max-h-[52px] xl:max-h-[68px] items-center justify-center md:justify-start flex-wrap sm:flex-nowrap md:space-x-3 lg:space-x-6 xl:space-x-8 md:mb-[116px] md:hidden">
             <div className="flex flex-col">

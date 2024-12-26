@@ -91,13 +91,13 @@ function Rating({ rating }: { rating: number }) {
 
 const PageArrivalShop = () => {
   return (
-    <section className="py-8 md:py-16">
+    <section className="py-8 md:py-16 font-Bold">
       <div className="container mx-auto px-4">
         <h2 className="text-2xl md:text-4xl font-bold text-center mb-6 md:mb-12">ON SALE</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 font-satoshi">
           {ShopArrivals.map((product) => (
             <div key={product.name} className="group">
-              <div className="relative aspect-square mb-4  rounded-lg overflow-hidden">
+              <div className="relative aspect-square mb-4  rounded-lg overflow-hidden font-satoshi">
                 <Image
                   src={product.image}
                   alt={product.name}

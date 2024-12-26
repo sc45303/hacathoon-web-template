@@ -1,3 +1,5 @@
+
+"use client";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,8 +11,8 @@ type ProductCardProps = {
     srcUrl: string;
     price: number;
     discount: {
-      percentage: number;
-      amount: number;
+    percentage: number;
+    amount: number;
     };
     rating: number;
   };

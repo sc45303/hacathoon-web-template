@@ -2,7 +2,7 @@ import { NewArrivals } from '@/app/components/new-arrivals'
 import { TopSelling } from '@/app/components/topSelling'
 import React from 'react'
 
-const BrandPage = () => {
+const SalePage = () => {
   return (
     <div>
       <NewArrivals />
@@ -13,4 +13,4 @@ const BrandPage = () => {
   )
 }
 
-export default BrandPage;
+export default SalePage

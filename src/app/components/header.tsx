@@ -10,7 +10,7 @@ export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="w-full font-satoshi">
+    <header className="w-full font-satoshi sticky top-0 z-50 bg-white">
       {/* Top Banner */}
       {showBanner && (
         <div className="bg-black text-white py-2 px-4 relative">
@@ -57,7 +57,7 @@ export function Header() {
                 menuOpen ? "hidden" : "flex"
               }`}
             >
-              <Link href="/shop" className="hover:text-gray-600 flex items-center">
+              <Link href="/pages/shop" className="hover:text-gray-600 flex items-center">
                 Shop
                 <ChevronDown className="h-4 w-4 ml-1" />
               </Link>

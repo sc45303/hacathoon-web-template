@@ -1,8 +1,12 @@
+"use client";
+
 import Image from "next/image"
 import { Star, StarHalf } from 'lucide-react'
+import { useRouter } from "next/navigation"
 
-const Arrivals = [
+const TopSellingProducts = [
   {
+    id: "t-shirt-tape-details",
     name: "T-shirt with Tape Details",
     image: "/images/pic8.png",
     rating: 4.5,
@@ -11,6 +15,7 @@ const Arrivals = [
     discount: null
   },
   {
+    id: "skinny-fit-jeans",
     name: "Skinny Fit Jeans",
     image: "/images/pic7.png",
     rating: 3.5,
@@ -19,6 +24,7 @@ const Arrivals = [
     discount: 20
   },
   {
+    id: "checkered-shirt",
     name: "Checkered Shirt",
     image: "/images/pic6.png",
     rating: 4.5,
@@ -27,6 +33,7 @@ const Arrivals = [
     discount: null
   },
   {
+    id: "sleeve-striped-tshirt",
     name: "Sleeve Striped T-shirt",
     image: "/images/pic5.png",
     rating: 4.5,
@@ -35,6 +42,7 @@ const Arrivals = [
     discount: 30
   }
 ]
+
 
 function Rating({ rating }: { rating: number }) {
   return (
@@ -53,14 +61,23 @@ function Rating({ rating }: { rating: number }) {
   )
 }
 
-export function TopSelling() {
+export function TopSelling() { 
+  const router = useRouter();
+  const handleProductClick = (id: string) => {
+    router.push(`/product/${id}`); // Navigate to dynamic product page
+  };
+
+
+
   return (
     <section className="py-8 md:py-16 font-Bold">
       <div className="container mx-auto px-4 font- ">
         <h2 className="text-2xl md:text-4xl font-bold text-center mb-6 md:mb-12  ">Top Selling</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 font-satoshi ">
-          {Arrivals.map((product) => (
-            <div key={product.name} className="group ">
+          {TopSellingProducts.map((product) => (
+            <div key={product.name} className="group "
+            onClick={() => handleProductClick(product.id)}>
+            
               <div className="relative aspect-square mb-4  rounded-4xl overflow-hidden  transform hover:scale-110 duration-300 ease-in-out " >
                 <Image
                   src={product.image}

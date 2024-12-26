@@ -18,6 +18,17 @@ export default {
 			
 
       },
+			animation: {
+        'rotate-slow': 'rotate-circle 10s linear infinite',
+        'rotate-slower': 'rotate-circle 20s linear infinite',
+      },
+      keyframes: {
+        'rotate-circle': {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+      },
+		
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
